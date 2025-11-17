@@ -216,7 +216,7 @@
         <div id="loginView">
           <h1>Welcome back</h1>
           <form id="loginForm">
-            <div class="notice-above">make an account if new </div>
+            <div class="notice-above">make an account if new right</div>
 
             <label>Your email</label>
             <input id="loginEmail" type="email" required />
@@ -242,7 +242,7 @@
         <div id="signupView" style="display:none;">
           <h1>Create account</h1>
           <form id="signupForm">
-            <div class="notice-above">make an account if new </div>
+            <div class="notice-above">make an account if new right</div>
 
             <label>Email (Gmail only)</label>
             <input id="signupEmail" type="email" required />
@@ -290,7 +290,7 @@
             </div>
 
             <div class="section-box">
-              <h3>Mainframe Computers</h3>
+              <h3>Mainframe Computers </h3>
               <p>Mainframes are very large and powerful machines designed for high-volume, continuous computation. They are essential for organizations like banks, airlines, universities, and government offices to handle transactions, customer data, and mission-critical applications. They support thousands of users simultaneously via dumb terminals or network connections, emphasizing reliability and data security.</p>
             </div>
 
@@ -399,14 +399,13 @@
   attachEye(document.getElementById('eyeLogin'), loginPassword);
   attachEye(document.getElementById('eyeSignup'), signupPassword);
 
-  // Initial load state
-  if (getAccount()) {
-    loginView.style.display=''; // If account exists, prompt login
-  } else {
-    signupView.style.display=''; // If no account, prompt signup
-  }
+  // Initial load state update: Always display the Login panel first.
+  // This explicitly ensures loginView is visible and signupView is hidden,
+  // overriding the previous logic that forced signup if no account existed.
+  loginView.style.display = '';
+  signupView.style.display = 'none';
+
 </script>
 
 </body>
-
 </html>
